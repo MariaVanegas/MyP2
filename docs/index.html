@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Decidir madera</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Lato', sans-serif;
+        --ancho: 400px;
+        /* --ancho: 100vw; */
+        --alto: calc((var(--ancho)/2)*3);
+        --seccion: calc(var(--alto)/3);
+        /* Colores */
+        --cafe: #533E35;
+        --rojo: #CC3332;
+        --azul: #38BFC3;
+      }
+      @media screen and (max-device-width: 400px) {
+        body {
+          --ancho: 100vw;
+          --alto: calc((var(--ancho)/2)*3);
+          --alto: calc((var(--ancho)/2)*3);
+        }
+      }
+      #storygeneraldiv {
+        box-sizing: border-box;
+        margin: auto;
+        max-width: var(--ancho);
+        height: var(--alto);
+        border: solid black 1px;
+      }
+
+      #storydiv {
+        box-sizing: border-box;
+        animation-name: anim;
+        animation-duration: 0.2s;
+      }
+
+      @keyframes anim {
+        from {width: 50%;}
+        to {width: 100%;}
+      }
+
+      .pdiv {
+        box-sizing: border-box;
+        height: var(--seccion);
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .storyp {
+        color: var(--cafe);
+        text-align: center;
+        box-sizing: border-box;
+        min-height: 40px;
+        max-height: var(--seccion);
+        overflow: scroll;
+        padding: 0px 10px;
+        font-size: 32px;
+      }
+
+      .storyp_message {
+        color: var(--cafe);
+        text-align: center;
+        box-sizing: border-box;
+        min-height: 40px;
+        max-height: var(--seccion);
+        overflow: scroll;
+        padding: 0px 10px;
+        font-size: 16px;
+      }
+
+      .idiv {
+        box-sizing: border-box;
+        height: var(--seccion);
+      }
+
+      .bdiv_double {
+        box-sizing: border-box;
+        height: var(--seccion);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap:0em;
+      }
+
+      .storybutton {
+        box-sizing: border-box;
+        display:inline-block;
+        height: calc(var(--alto)/6);
+        padding: 0px;
+        color: white;
+        border: none;
+        box-shadow: none;
+        margin: 0px;
+        font-size: 20px;
+        transition: all 0.5s;
+      }
+      .storybutton:hover {
+        font-weight: 900;
+      }
+      .storyimage {
+        box-sizing: border-box;
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media screen and (max-device-width: 400px) {
+        .storyp {
+          font-size: 6vw;
+        }
+        .storyp_message {
+          font-size: 3vw;
+        }
+        .storybutton {
+          font-size: 5vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="storygeneraldiv">
+    </div>
+  </body>
+  <script src="aventura.js"></script>
+  <script src="main.js"></script>
+</html>
