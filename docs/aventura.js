@@ -57,20 +57,22 @@ class Aventura {
 
     // TEXTO
     let pdiv = document.createElement("div");
-    pdiv.className = "pdiv";
+    pdiv.className = imagePath == undefined ? "pdiv_long" : "pdiv_short";
     storydiv.appendChild(pdiv);
 
     let p = document.createElement("p");
     p.className = textType=='MAIN' ? "storyp" : "storyp_message";
     p.innerHTML = "";
     pdiv.appendChild(p);
+    if (s.key == 'intro' || s.key == 'end') {
+      p.classList.add("longtext");
+    }
 
     // IMAGEN
-    let idiv = document.createElement("div");
-    idiv.className = "idiv";
-    storydiv.appendChild(idiv);
-
     if (imagePath != undefined) {
+      let idiv = document.createElement("div");
+      idiv.className = "idiv";
+      storydiv.appendChild(idiv);
       let image = document.createElement("img");
       image.className = "storyimage";
       image.src = imagePath;

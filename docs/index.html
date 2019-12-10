@@ -10,7 +10,6 @@
         padding: 0px;
         font-family: 'Lato', sans-serif;
         --ancho: 400px;
-        /* --ancho: 100vw; */
         --alto: calc((var(--ancho)/2)*3);
         --seccion: calc(var(--alto)/3);
         /* Colores */
@@ -18,7 +17,7 @@
         --rojo: #CC3332;
         --azul: #38BFC3;
       }
-      @media screen and (max-device-width: 400px) {
+      @media screen and (max-device-width: 500px) {
         body {
           --ancho: 100vw;
           --alto: calc((var(--ancho)/2)*3);
@@ -44,7 +43,16 @@
         to {width: 100%;}
       }
 
-      .pdiv {
+      .pdiv_long {
+        box-sizing: border-box;
+        height: calc(var(--seccion)*2);
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pdiv_short {
         box-sizing: border-box;
         height: var(--seccion);
         padding: 5%;
@@ -61,18 +69,21 @@
         max-height: var(--seccion);
         overflow: scroll;
         padding: 0px 10px;
-        font-size: 32px;
+        font-size: 28px;
+      }
+
+      .longtext {
+        font-size: 18px;
       }
 
       .storyp_message {
         color: var(--cafe);
-        text-align: center;
         box-sizing: border-box;
         min-height: 40px;
-        max-height: var(--seccion);
+        max-height: calc(var(--seccion)*2);
         overflow: scroll;
         padding: 0px 10px;
-        font-size: 16px;
+        font-size: 18px;
       }
 
       .idiv {
@@ -92,13 +103,13 @@
         box-sizing: border-box;
         display:inline-block;
         height: calc(var(--alto)/6);
-        padding: 0px;
+        padding: 0px 5px;
         color: white;
         border: none;
         box-shadow: none;
         margin: 0px;
-        font-size: 20px;
-        transition: all 0.5s;
+        font-size: 18px;
+        /* transition: all 0.5s; */
       }
       .storybutton:hover {
         font-weight: 900;
@@ -110,15 +121,18 @@
         margin-left: auto;
         margin-right: auto;
       }
-      @media screen and (max-device-width: 400px) {
+      @media screen and (max-device-width: 500px) {
         .storyp {
-          font-size: 6vw;
+          font-size: 5.5vw;
         }
         .storyp_message {
+          font-size: 3.5vw;
+        }
+        .longtext {
           font-size: 3vw;
         }
         .storybutton {
-          font-size: 5vw;
+          font-size: 4.5vw;
         }
       }
     </style>
