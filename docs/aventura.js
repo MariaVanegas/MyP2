@@ -6,6 +6,39 @@ class Aventura {
       typewriterSpeed: 0
     }
     if (options) {this.options = Object.assign(this.options,options)}
+    this.path = [];
+    this.selections = [];
+
+    //--------
+    this.equivalencias = [
+      "grande",
+      "pequeño ó mediano",
+      "con torneados, tallas y ensambles",
+      "con planos unidos con herrajes",
+      "de fabricación artesanal o semiartesanal",
+      "de fabricación industrial",
+      "para lugares con alta humedad",
+      "para interiores",
+      `con acabado "plástico" y cubriente`,
+      "que simule aspecto de madera maciza",
+      "para exteriores o zonas húmedas",
+      "para áreas con uso de agua"
+    ]
+    
+    this.respuestas = [
+      "Grande",
+      "Pequeño ó mediano",
+      "Torneados, tallas, ensambles",
+      "Planos unidos con herrajes",
+      "Fabricación artesanal ó semiartesanal",
+      "Fabricación industrial",
+      "Sí, posiblemente mayor a la del ambiente",
+      "No, su uso será interior",
+      `Tendrá un color de acabado "plástico" y cubriente`,
+      "Simula el aspecto de la madera maciza",
+      "Exterior o zona húmeda",
+      "Interior en área con uso de agua"
+    ]
   }
 
   setScenes(scenes) {
@@ -47,12 +80,20 @@ class Aventura {
     if (textType == 'MAIN') {
       text = s.text;
       imagePath = s.image;
+      this.path.push(s.key);
+      //console.log(this.path);
     } else if (textType == 'A') {
       text = s.messageA;
       imagePath = s.imageA;
     } else if (textType == 'B') {
       text = s.messageB;
       imagePath = s.imageB;
+    } else if (textType == 'A2') {
+      text = s.messageA2;
+      imagePath = s.imageA2;
+    } else if (textType == 'B2') {
+      text = s.messageB2;
+      imagePath = s.imageB2;
     }
 
     // TEXTO
@@ -66,6 +107,10 @@ class Aventura {
     pdiv.appendChild(p);
     if (s.key == 'intro' || s.key == 'end') {
       p.classList.add("longtext");
+    }
+
+    if (s.key == 'end') {
+      text = this.conclusion();
     }
 
     // IMAGEN
@@ -98,13 +143,20 @@ class Aventura {
     }
   }
 
+  conclusion() {
+    let texto = "Tu proyecto es un objeto "
+    for (let i=0;i<this.selections.length;i++) {
+      texto+=this.equivalencias[this.respuestas.indexOf(this.selections[i])];
+      if ((i<=this.selections.length-2)) {
+        texto+=", "
+      }
+    }
+    texto+="\n\nRecomendación: "+this.scenes.end.recommendation;
+    return texto
+  }
+
   optionButtons(s) {
     let storydiv = document.getElementById("storydiv");
-
-    // #CC3332 Rojo
-    // #38BFC3 Azul
-    // #533E35 Café
-
     let bdiv = document.createElement("div");
     bdiv.className = "bdiv_double";
     storydiv.appendChild(bdiv);
@@ -116,6 +168,10 @@ class Aventura {
     bdiv.appendChild(optionAButton);
     optionAButton.addEventListener("click",()=>{
       let buttonType = s.sceneA == 'end' ? 'continue' : 'options';
+      if (s.sceneA == 'end') {
+        this.scenes.end.recommendation = s.recommendationA;
+      }
+      this.selections.push(s.optionA);
       this.goToScene_dom(s,'A',()=>{this.continueButton(this.scenes[s.sceneA],buttonType)});
     });
 
@@ -125,7 +181,11 @@ class Aventura {
     optionBButton.style.background = "#38BFC3";
     bdiv.appendChild(optionBButton);
     optionBButton.addEventListener("click",()=>{
-      let buttonType = s.sceneB == 'end' ? 'continue' : 'options';
+      let buttonType = (s.sceneB == 'end') ? 'continue' : 'options';
+      if (s.sceneB == 'end') {
+        this.scenes.end.recommendation = s.recommendationB;
+      }
+      this.selections.push(s.optionB);
       this.goToScene_dom(s,'B',()=>{this.continueButton(this.scenes[s.sceneB],buttonType)});
     });
   }
