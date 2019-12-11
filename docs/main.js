@@ -24,7 +24,7 @@ let escenas = {
     sceneA: "end",
     sceneB: "entorno",
     messageA: "La <b>madera maciza</b> funciona bien en procesos de transformación donde la resistencia y el comportamiento de las fibras permite generar diversas formas por corte, tanto con herrramientas manuales como eléctricas.\n\nMuchos de estos elementos tienen un caracter más decorativo que estrictamente funcional. Los ensambles cumplen con ambas exigencias y son un recurso común para generar uniones más resistentes que aquellas que dependen de adhesivos o elementos como tornillos ó puntillas.",
-    messageB: "USA UN DERIVADO\nSi bien es posible realizar superficies de gran tamaño a partir de madera maciza, en la actualidad los derivados como el contrachapado, el aglomerado ó el MDF son lo más usado en este tipo de aplicaciones, pues son fabricados en formatos de láminas de gran tamaño. Igualmente, existe un amplio conjunto de tornillos, insertos y muchos otros herrajes que hacen posible la unión y articulación de piezas en estos materiales."
+    messageB: "Si bien es posible realizar superficies de gran tamaño a partir de madera maciza, en la actualidad los derivados como el <b>contrachapado, el aglomerado ó el MDF son lo más usado en este tipo de aplicaciones</b>, pues son fabricados en formatos de láminas de gran tamaño. Igualmente, existe un amplio conjunto de tornillos, insertos y muchos otros herrajes que hacen posible la unión y articulación de piezas en estos materiales."
   },
   tecnica: {
     image: "assets/test.jpeg",
@@ -43,18 +43,28 @@ let escenas = {
     optionB: "No, su uso será interior",
     sceneA: "humedad",
     sceneB: "visual",
-    messageA: "El objeto se verá sometido al contacto con agua directa o indirectamente. Sin embargo, podríamos considerar dos tipos de humedad. A cuál corresponde el entorno imaginado del objeto?",
+    messageA: "El objeto se verá sometido al contacto con agua directa o indirectamente. Sin embargo, podríamos considerar dos tipos de humedad. ¿A cuál corresponde el entorno imaginado del objeto?",
     messageB: `Se suele evitar el uso de aglomerados ó contrachapados en aplicaciones que estarán a la intemperie o en ambientes húmedos, dada la alta capacidad de absorción de las fibras procesadas. Existen algunas excepciones de materiales que cuentan con "ingredientes" llamados aditivos para mejorar su desempeño en este aspecto. Ahora, hay que considerar...`
   },
   visual: {
     image: "assets/test.jpeg",
     text: "¿Cuál es la apariencia del objeto",
     optionA: `Tendrá un color de acabado "plástico" y cubriente`,
-    optionB: "Se desea que el material tenga ó simule el aspecto de la madera maciza",
-    sceneA: "",
-    sceneB: "",
-    messageA: "",
-    messageB: ""
+    optionB: "Simula el aspecto de la madera maciza",
+    sceneA: "end",
+    sceneB: "end",
+    messageA: "El uso de lacas, barnices y pinturas acrílicas permite obtener colores planos, de diferentes brillos y texturas usualmente lisas. Los materiales que mejor reciben estos acabados son el <b>MDF y el contrachapado</b>, requiriendo procesos de sellado previos. También está la opción de los recubrimientos plásticos, siendo el más común el melamínico.",
+    messageB: "Existen múltiples opciones para simular que un tablero de derivado es madera maciza. La más común es el uso de fórmicas, melaminas u otros recubrimientos laminados que simulan especies originarias de todo el mundo. Existe también la opción de enchapar con chapas de madera maciza láminas de aglomerado, mdf ó contrachapado. Los cantos (o lados que corresponden al grosor) también merecen especial atención en la acción de enchapado."
+  },
+  humedad: {
+    image: "assets/test.jpeg",
+    text: "¿Dónde va a vivir este objeto?",
+    optionA: "Exterior o zona húmeda",
+    optionB: "Interior en área con uso de agua",
+    sceneA: "end",
+    sceneB: "end",
+    messageA: "Estructuras arquitectónicas a la intemperie, parques infantiles, decks (pisos) para saunas, piscinas o similares, se fabrican con especies de <b>madera maciza</b> que por su composición son resistentes a la humedad y a otros agentes naturales.",
+    messageB: "El mobiliario de áreas como cocinas y baños se realiza de manera muy extendida en láminas de derivados recubiertas por todas sus caras con un revestimiento plástico desde la fábrica."
   },
   vacio: {
     image: "assets/test.jpeg",
