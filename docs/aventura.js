@@ -50,12 +50,13 @@ class Aventura {
   }
 
   domAdventure() {
+
     if (this.lang === undefined) {console.log("Tura.js: Language undefined / lenguaje indefinido");return}
     document.title = this.scenes.cover.title.toUpperCase();
 
     this.scenes.cover.text = `${this.scenes.cover.title}<br>${this.scenes.cover.subtitle}`;
     this.scenes.intro.continuation = 'start';
-    this.scenes.end.continuation = 'credits';
+    this.scenes.end.continuation = 'cover';
     let credits = this.scenes.credits.text;
       for (let a in this.scenes.credits.authors) {
         credits+=`<br>${this.scenes.credits.authors[a]}`;
@@ -134,12 +135,12 @@ class Aventura {
         i++;
         if (i>text.length) {
           clearInterval(interval);
-          if (s.key!='credits') {callback()};
+          callback();
         }
       },this.options.typewriterSpeed);
     } else {
       p.innerHTML = text;
-      if (s.key!='credits') {callback()};
+      callback();
     }
   }
 
@@ -193,7 +194,10 @@ class Aventura {
   continueButton(s,buttonType = "options") {
     let storydiv = document.getElementById("storydiv");
     let continueText = this.lang === 'en' ? "Continue" : "Continuar";
-
+    if (s.key) {
+      continueText = s.key == "cover" ? "Reiniciar" : continueText;
+    }
+    
     let bdiv = document.createElement("div");
     bdiv.className = "bdiv_double";
     storydiv.appendChild(bdiv);
@@ -207,7 +211,9 @@ class Aventura {
     continueButton.style.background = "#533E35";
     bdiv.appendChild(continueButton);
     continueButton.addEventListener("click",()=>{
-      if (buttonType == 'continue') {
+      if (continueText == 'Reiniciar') {
+        window.location.reload(true);
+      } else if (buttonType == 'continue') {
         this.goToScene_dom(s,'MAIN',()=>{this.continueButton(this.scenes[s.continuation])});
       }  else {
         this.goToScene_dom(s,'MAIN',()=>{this.optionButtons(s)});

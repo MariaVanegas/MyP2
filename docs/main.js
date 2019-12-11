@@ -7,7 +7,7 @@ let escenas = {
     text: "La madera es un material muy versátil. Sin embargo, es importante conocer algunas de las características que hacen que la decisión resulte en un objeto de mejor calidad, de mayor durabilidad o acorde con el uso.",
   },
   start: {
-    image: "assets/test.jpeg",
+    image: "assets/start.png",
     text: "¿De qué tamaño es el objeto?",
     optionA: "Grande",
     optionB: "Pequeño ó mediano",
@@ -17,7 +17,7 @@ let escenas = {
     messageB: "Los <b>objetos pequeños y medianos</b> son de escala manual o corporal: se pueden manipular y transportar con facilidad por el usuario.\nPensemos ahora en los medios que usaremos para obtener el objeto...",
   },
   detalles: {
-    image: "assets/test.jpeg",
+    image: "assets/detalles.png",
     text: "¿Qué tipo de detalles tiene este objeto?",
     optionA: "Torneados, tallas, ensambles",
     optionB: "Planos unidos con herrajes",
@@ -28,7 +28,7 @@ let escenas = {
     messageB: "Es posible realizar superficies de gran tamaño a partir de madera maciza; comercialmente existen los <b>tableros alistonados</b>. Sin embargo, <b>el contrachapado, el aglomerado y el MDF</b> son lo más usado en este tipo de aplicaciones por su <b>bajo costo</b> en comparación con los tableros.\nEscogiendo la opción barata, conviene pensar... cómo es el lugar en el que estará el objeto?."
   },
   tecnica: {
-    image: "assets/test.jpeg",
+    image: "assets/tecnica.png",
     text: "¿Cuál es el tipo de fabricación principal por el cual se puede obtener el objeto?",
     optionA: "Fabricación artesanal ó semiartesanal",
     optionB: "Fabricación industrial",
@@ -38,7 +38,7 @@ let escenas = {
     messageB: "La fabricación industrial corresponde a series masivas de productos que se repiten prácticamente sin variaciones: uso de modelos CAD y análogos, plantillas, guías, maquinaria automatizada, producción CNC. Por la idea de obtener productos idénticos, es común el uso de derivados de origen industrial: <b>contrachapados y aglomerados</b>.\nLa decisión en este caso depende del acabado esperado en el objeto..."
   },
   entorno: {
-    image: "assets/test.jpeg",
+    image: "assets/entorno.png",
     text: "¿Este objeto está destinado para el uso en lugares con humedad?",
     optionA: "Sí, posiblemente mayor a la del ambiente",
     optionB: "No, su uso será interior",
@@ -48,7 +48,7 @@ let escenas = {
     messageB: `Si el objeto está destinado a un lugar cubierto y seco, es posible usar con tranquilidad el <b>contrachapado, el aglomerado y el MDF</b>.\nAhora, hay que considerar el aspecto deseado en relación con la protección que requiere...`
   },
   visual: {
-    image: "assets/test.jpeg",
+    image: "assets/visual.png",
     text: "¿Cuál es la apariencia del objeto",
     optionA: `Tendrá un color de acabado "plástico" y cubriente`,
     optionB: "Simula el aspecto de la madera maciza",
@@ -60,7 +60,7 @@ let escenas = {
     recommendationB: "puedes usar cualquier derivado",
   },
   humedad: {
-    image: "assets/test.jpeg",
+    image: "assets/humedad.png",
     text: "¿Dónde va a vivir este objeto?",
     optionA: "Exterior o zona húmeda",
     optionB: "Interior en área con uso de agua",
@@ -69,7 +69,7 @@ let escenas = {
     messageA: "Si el objeto vivirá afuera, a la intemperie, o en un área interior pero muy húmeda, como algunas estructuras arquitectónicas, parques infantiles, decks (pisos) para saunas, piscinas o similares, se deben fabricar con especies de <b>madera maciza</b> que por su composición son resistentes a la humedad y a otros agentes naturales. Has llegado al final.\nPiensa en otra clase de objeto y repite el test!",
     recommendationA: "madera maciza",
     messageB: "El mobiliario de áreas como cocinas y baños se realiza de manera muy extendida en <b>láminas de aglomerado</b> recubiertas por todas sus caras con un revestimiento plástico desde la fábrica.\nPiensa en otra clase de objeto y repite el test!",
-    recommendationA: "láminas de aglomerado"
+    recommendationB: "láminas de aglomerado"
   },
   vacio: {
     image: "assets/test.jpeg",
