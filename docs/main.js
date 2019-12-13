@@ -37,7 +37,7 @@ let escenas = {
     optionB: "Fabricación industrial",
     sceneA: "detalles",
     sceneB: "visual",
-    messageA: "La fabricación artesanal ó semiartesanal se caracteriza por producir pequeñas cantidades de cada objeto y por el uso de materiales obtenidos en el mismo espacio geográfico donde trabaja el artesano, por ello lo más común es el uso de materiales no estandarizados y la exploración formal a partir de las cualidades inherentes al material en su estado natural, es decir, <b>la madera maciza</b>, nueva, recuperada, reciclada o restaurada. Las fibras naturales entran en esta opción.\n¡Prueba de nuevo con otras preguntas!",
+    messageA: "La fabricación artesanal ó semiartesanal se caracteriza por producir pequeñas cantidades de cada objeto y por el uso de materiales obtenidos en el mismo espacio geográfico donde trabaja el artesano, por ello lo más común es el uso de materiales no estandarizados y la exploración formal a partir de las cualidades inherentes al material en su estado natural, es decir, <b>la madera maciza</b>, nueva, recuperada, reciclada o restaurada. Las fibras naturales entran en esta opción.",
     messageB: "La fabricación industrial corresponde a series masivas de productos que se repiten prácticamente sin variaciones: uso de modelos CAD y análogos, plantillas, guías, maquinaria automatizada, producción CNC. Por la idea de obtener productos idénticos, es común el uso de derivados de origen industrial: <b>contrachapados y aglomerados</b>.\nLa decisión en este caso depende del acabado esperado en el objeto..."
   },
   entorno: {
