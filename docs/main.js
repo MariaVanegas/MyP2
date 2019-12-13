@@ -25,7 +25,7 @@ let escenas = {
     optionB: "Planos unidos con herrajes",
     sceneA: "end",
     sceneB: "entorno",
-    messageA: "Para un proyecto con tallas, torneados y/o ensambles tradicionales, la <b>madera maciza será lo mejor</b>: permite buena calidad en procesos de transformación para generar diversas formas y volúmenes decorativos. Los ensambles se usan para las <b>uniones más resistentes</b> que las de adhesivos, tornillos ó puntillas, con valor estético agregado.\n¡Prueba de nuevo con otras preguntas! ",
+    messageA: "Para un proyecto con tallas, torneados y/o ensambles tradicionales, la <b>madera maciza será lo mejor</b>: permite buena calidad en procesos de transformación para generar diversas formas y volúmenes decorativos. Los ensambles se usan para las <b>uniones más resistentes</b> que las de adhesivos, tornillos ó puntillas, con valor estético agregado.",
     recommendationA: "madera maciza",
     endA: "assets/end/maciza_detalles.jpg",
     messageB: "Es posible realizar superficies de gran tamaño a partir de madera maciza; comercialmente existen los <b>tableros alistonados</b>. Sin embargo, <b>el contrachapado, el aglomerado y el MDF</b> son lo más usado en este tipo de aplicaciones por su <b>bajo costo</b> en comparación con los tableros.\nEscogiendo la opción barata, conviene pensar... cómo es el lugar en el que estará el objeto?."
@@ -57,7 +57,7 @@ let escenas = {
     optionB: "Simula el aspecto de la madera maciza",
     sceneA: "end",
     sceneB: "end",
-    messageA: " Puedes usar cualquier derivado cubierto con un polimero ó pintado. El uso de lacas, barnices y pinturas acrílicas permite obtener colores planos, de diferentes brillos y texturas usualmente lisas. Los materiales que mejor reciben estos acabados son el <b>MDF y el contrachapado</b>, requiriendo procesos de sellado previos. También está la opción de los recubrimientos plásticos, siendo el más común el melamínico sobre <b>aglomerado</b>.\nHas llegado al final del test. Repítelo para un objeto diferente!",
+    messageA: " Puedes usar cualquier derivado cubierto con un polimero ó pintado. El uso de lacas, barnices y pinturas acrílicas permite obtener colores planos, de diferentes brillos y texturas usualmente lisas. Los materiales que mejor reciben estos acabados son el <b>MDF y el contrachapado</b>, requiriendo procesos de sellado previos. También está la opción de los recubrimientos plásticos, siendo el más común el melamínico sobre <b>aglomerado</b>.",
     recommendationA: "MDF, contrachapado o aglomerado",
     endA: "assets/end/pintada_visual.jpg",
     messageB: "<b>Puedes usar cualquier derivado</b>. Existen múltiples opciones para simular que un tablero de derivado es madera maciza. El más simple es usar un contrachapado y cubrir sus cantos (o lados que corresponden al grosor). Es común el uso de fórmicas, melaminas u otros recubrimientos laminados que imitan el color e incluso la textura de la madera real. Existe también la opción de enchapar: pegar chapas de madera maciza al material base.",
@@ -71,22 +71,12 @@ let escenas = {
     optionB: "Interior en área con uso de agua",
     sceneA: "end",
     sceneB: "end",
-    messageA: "Si el objeto vivirá afuera, a la intemperie, o en un área interior pero muy húmeda, como algunas estructuras arquitectónicas, parques infantiles, decks (pisos) para saunas, piscinas o similares, se deben fabricar con especies de <b>madera maciza</b> que por su composición son resistentes a la humedad y a otros agentes naturales. Has llegado al final.\nPiensa en otra clase de objeto y repite el test!",
+    messageA: "Si el objeto vivirá afuera, a la intemperie, o en un área interior pero muy húmeda, como algunas estructuras arquitectónicas, parques infantiles, decks (pisos) para saunas, piscinas o similares, se deben fabricar con especies de <b>madera maciza</b> que por su composición son resistentes a la humedad y a otros agentes naturales.",
     recommendationA: "madera maciza",
     endA: "assets/end/maciza_humedad.jpg",
-    messageB: "El mobiliario de áreas como cocinas y baños se realiza de manera muy extendida en <b>láminas de aglomerado</b> recubiertas por todas sus caras con un revestimiento plástico desde la fábrica.\nPiensa en otra clase de objeto y repite el test!",
+    messageB: "El mobiliario de áreas como cocinas y baños se realiza de manera muy extendida en <b>láminas de aglomerado</b> recubiertas por todas sus caras con un revestimiento plástico desde la fábrica.",
     recommendationB: "láminas de aglomerado",
     endB: "assets/end/aglomerado_humedad.jpg"
-  },
-  vacio: {
-    image: "assets/test.jpeg",
-    text: "",
-    optionA: "",
-    optionB: "",
-    sceneA: "",
-    sceneB: "",
-    messageA: "",
-    messageB: ""
   },
   end: {
     image: "",
