@@ -24,6 +24,11 @@
           --alto: calc((var(--ancho)/2)*3);
         }
       }
+
+      a {
+        color: var(--rojo);
+      }
+
       #storygeneraldiv {
         box-sizing: border-box;
         margin: auto;
@@ -34,22 +39,16 @@
 
       #storydiv {
         box-sizing: border-box;
-        /* animation-name: anim;
-        animation-duration: 0.2s; */
       }
-
-      /* @keyframes anim {
-        from {width: 50%;}
-        to {width: 100%;}
-      } */
 
       .pdiv_long {
         box-sizing: border-box;
         height: calc(var(--seccion)*2);
-        padding: 5%;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
       }
 
       .pdiv_short {
@@ -65,7 +64,6 @@
         color: var(--cafe);
         text-align: center;
         box-sizing: border-box;
-        min-height: 40px;
         max-height: var(--seccion);
         overflow: auto;
         padding: 0px 10px;
@@ -73,7 +71,10 @@
       }
 
       .longtext {
-        font-size: 18px;
+        font-size: 20px;
+        width: 100%;
+        padding: 0px 5%;
+        background:rgba(255,255,255,0.8);
       }
 
       .storyp_message {
@@ -126,10 +127,10 @@
           font-size: 6vw;
         }
         .storyp_message {
-          font-size: 5vw;
+          font-size: 3vw;
         }
         .longtext {
-          font-size: 5vw;
+          font-size: 6vw;
         }
         .storybutton {
           font-size: 4.5vw;

@@ -10,21 +10,6 @@ class Aventura {
     this.selections = [];
 
     //--------
-    this.equivalencias = [
-      "grande",
-      "pequeño ó mediano",
-      "con torneados, tallas y ensambles",
-      "con planos unidos con herrajes",
-      "de fabricación artesanal o semiartesanal",
-      "de fabricación industrial",
-      "para lugares con alta humedad",
-      "para interiores",
-      `con acabado "plástico" y cubriente`,
-      "que simule aspecto de madera maciza",
-      "para exteriores o zonas húmedas",
-      "para áreas con uso de agua"
-    ]
-    
     this.respuestas = [
       "Grande",
       "Pequeño ó mediano",
@@ -38,6 +23,20 @@ class Aventura {
       "Simula el aspecto de la madera maciza",
       "Exterior o zona húmeda",
       "Interior en área con uso de agua"
+    ]
+    this.equivalencias = [
+      "grande",
+      "pequeño ó mediano",
+      "con torneados, tallas y ensambles",
+      "con planos unidos con herrajes",
+      "de fabricación artesanal o semiartesanal",
+      "de fabricación industrial",
+      "para lugares con alta humedad",
+      "para interiores",
+      `con acabado "plástico" y cubriente`,
+      "que simula el aspecto de madera maciza",
+      "para exteriores o zonas húmedas",
+      "para áreas con uso de agua"
     ]
   }
 
@@ -54,7 +53,7 @@ class Aventura {
     if (this.lang === undefined) {console.log("Tura.js: Language undefined / lenguaje indefinido");return}
     document.title = this.scenes.cover.title.toUpperCase();
 
-    this.scenes.cover.text = `${this.scenes.cover.title}<br>${this.scenes.cover.subtitle}`;
+    this.scenes.cover.text = `${this.scenes.cover.title}`;
     this.scenes.intro.continuation = 'start';
     this.scenes.end.continuation = 'cover';
     let credits = this.scenes.credits.text;
@@ -82,31 +81,27 @@ class Aventura {
       text = s.text;
       imagePath = s.image;
       this.path.push(s.key);
-      //console.log(this.path);
     } else if (textType == 'A') {
       text = s.messageA;
       imagePath = s.imageA;
     } else if (textType == 'B') {
       text = s.messageB;
       imagePath = s.imageB;
-    } else if (textType == 'A2') {
-      text = s.messageA2;
-      imagePath = s.imageA2;
-    } else if (textType == 'B2') {
-      text = s.messageB2;
-      imagePath = s.imageB2;
     }
 
     // TEXTO
     let pdiv = document.createElement("div");
     pdiv.className = imagePath == undefined ? "pdiv_long" : "pdiv_short";
+    if (s.key == 'cover' || s.key == 'intro' || s.key == 'end') {
+      pdiv.className = "pdiv_long";
+    }
     storydiv.appendChild(pdiv);
 
     let p = document.createElement("p");
     p.className = textType=='MAIN' ? "storyp" : "storyp_message";
     p.innerHTML = "";
     pdiv.appendChild(p);
-    if (s.key == 'intro' || s.key == 'end') {
+    if (s.key == 'cover' || s.key == 'intro' || s.key == 'end') {
       p.classList.add("longtext");
     }
 
@@ -116,13 +111,17 @@ class Aventura {
 
     // IMAGEN
     if (imagePath != undefined) {
-      let idiv = document.createElement("div");
-      idiv.className = "idiv";
-      storydiv.appendChild(idiv);
-      let image = document.createElement("img");
-      image.className = "storyimage";
-      image.src = imagePath;
-      idiv.appendChild(image);
+      if (s.key == 'cover' || s.key == 'intro' || s.key == 'end') {
+        pdiv.style.backgroundImage = `url(${imagePath})`;
+      } else {
+        let idiv = document.createElement("div");
+        idiv.className = "idiv";
+        storydiv.appendChild(idiv);
+        let image = document.createElement("img");
+        image.className = "storyimage";
+        image.src = imagePath;
+        idiv.appendChild(image);
+      }
     }
 
     // BOTÓN
@@ -152,7 +151,7 @@ class Aventura {
         texto+=", "
       }
     }
-    texto+="\n\nRecomendación: "+this.scenes.end.recommendation;
+    texto+="<b>\n\nRecomendación: "+this.scenes.end.recommendation+"</b>";
     return texto
   }
 
@@ -171,6 +170,7 @@ class Aventura {
       let buttonType = s.sceneA == 'end' ? 'continue' : 'options';
       if (s.sceneA == 'end') {
         this.scenes.end.recommendation = s.recommendationA;
+        this.scenes.end.image = s.endA;
       }
       this.selections.push(s.optionA);
       this.goToScene_dom(s,'A',()=>{this.continueButton(this.scenes[s.sceneA],buttonType)});
@@ -185,6 +185,7 @@ class Aventura {
       let buttonType = (s.sceneB == 'end') ? 'continue' : 'options';
       if (s.sceneB == 'end') {
         this.scenes.end.recommendation = s.recommendationB;
+        this.scenes.end.image = s.endB;
       }
       this.selections.push(s.optionB);
       this.goToScene_dom(s,'B',()=>{this.continueButton(this.scenes[s.sceneB],buttonType)});
@@ -195,7 +196,7 @@ class Aventura {
     let storydiv = document.getElementById("storydiv");
     let continueText = this.lang === 'en' ? "Continue" : "Continuar";
     if (s.key) {
-      continueText = s.key == "cover" ? "Reiniciar" : continueText;
+      continueText = s.key == "cover" ? "¡Prueba de nuevo!" : continueText;
     }
     
     let bdiv = document.createElement("div");
@@ -211,7 +212,7 @@ class Aventura {
     continueButton.style.background = "#533E35";
     bdiv.appendChild(continueButton);
     continueButton.addEventListener("click",()=>{
-      if (continueText == 'Reiniciar') {
+      if (continueText == '¡Prueba de nuevo!') {
         window.location.reload(true);
       } else if (buttonType == 'continue') {
         this.goToScene_dom(s,'MAIN',()=>{this.continueButton(this.scenes[s.continuation])});

@@ -1,13 +1,15 @@
 let escenas = {
   cover: {
-    title: "¿Qué funciona mejor para el objeto en proceso de diseño:",
-    subtitle: "madera maciza o un derivado?",
+    image: "assets/cover.jpg",
+    title: "Madera \nVs. \nderivados de la madera",
+    subtitle: "",
   },
   intro:{
-    text: "La madera es un material muy versátil. Sin embargo, es importante conocer algunas de las características que hacen que la decisión resulte en un objeto de mejor calidad, de mayor durabilidad o acorde con el uso.",
+    image: "assets/intro.jpg",
+    text: "¡Hola, diseñador! A continuación encontrarás un test para descubrir el material más conveniente para tu proyecto.\n¡Escoge alguna de las dos opciones en cada pregunta y descubre la sugerencia!",
   },
   start: {
-    image: "assets/start.png",
+    image: "assets/start.jpg",
     text: "¿De qué tamaño es el objeto?",
     optionA: "Grande",
     optionB: "Pequeño ó mediano",
@@ -17,7 +19,7 @@ let escenas = {
     messageB: "Los <b>objetos pequeños y medianos</b> son de escala manual o corporal: se pueden manipular y transportar con facilidad por el usuario.\nPensemos ahora en los medios que usaremos para obtener el objeto...",
   },
   detalles: {
-    image: "assets/detalles.png",
+    image: "assets/detalles.jpg",
     text: "¿Qué tipo de detalles tiene este objeto?",
     optionA: "Torneados, tallas, ensambles",
     optionB: "Planos unidos con herrajes",
@@ -25,10 +27,11 @@ let escenas = {
     sceneB: "entorno",
     messageA: "Para un proyecto con tallas, torneados y/o ensambles tradicionales, la <b>madera maciza será lo mejor</b>: permite buena calidad en procesos de transformación para generar diversas formas y volúmenes decorativos. Los ensambles se usan para las <b>uniones más resistentes</b> que las de adhesivos, tornillos ó puntillas, con valor estético agregado.\n¡Prueba de nuevo con otras preguntas! ",
     recommendationA: "madera maciza",
+    endA: "assets/end/maciza_detalles.jpg",
     messageB: "Es posible realizar superficies de gran tamaño a partir de madera maciza; comercialmente existen los <b>tableros alistonados</b>. Sin embargo, <b>el contrachapado, el aglomerado y el MDF</b> son lo más usado en este tipo de aplicaciones por su <b>bajo costo</b> en comparación con los tableros.\nEscogiendo la opción barata, conviene pensar... cómo es el lugar en el que estará el objeto?."
   },
   tecnica: {
-    image: "assets/tecnica.png",
+    image: "assets/tecnica.jpg",
     text: "¿Cuál es el tipo de fabricación principal por el cual se puede obtener el objeto?",
     optionA: "Fabricación artesanal ó semiartesanal",
     optionB: "Fabricación industrial",
@@ -38,7 +41,7 @@ let escenas = {
     messageB: "La fabricación industrial corresponde a series masivas de productos que se repiten prácticamente sin variaciones: uso de modelos CAD y análogos, plantillas, guías, maquinaria automatizada, producción CNC. Por la idea de obtener productos idénticos, es común el uso de derivados de origen industrial: <b>contrachapados y aglomerados</b>.\nLa decisión en este caso depende del acabado esperado en el objeto..."
   },
   entorno: {
-    image: "assets/entorno.png",
+    image: "assets/entorno.jpg",
     text: "¿Este objeto está destinado para el uso en lugares con humedad?",
     optionA: "Sí, posiblemente mayor a la del ambiente",
     optionB: "No, su uso será interior",
@@ -48,7 +51,7 @@ let escenas = {
     messageB: `Si el objeto está destinado a un lugar cubierto y seco, es posible usar con tranquilidad el <b>contrachapado, el aglomerado y el MDF</b>.\nAhora, hay que considerar el aspecto deseado en relación con la protección que requiere...`
   },
   visual: {
-    image: "assets/visual.png",
+    image: "assets/visual.jpg",
     text: "¿Cuál es la apariencia del objeto",
     optionA: `Tendrá un color de acabado "plástico" y cubriente`,
     optionB: "Simula el aspecto de la madera maciza",
@@ -56,11 +59,13 @@ let escenas = {
     sceneB: "end",
     messageA: " Puedes usar cualquier derivado cubierto con un polimero ó pintado. El uso de lacas, barnices y pinturas acrílicas permite obtener colores planos, de diferentes brillos y texturas usualmente lisas. Los materiales que mejor reciben estos acabados son el <b>MDF y el contrachapado</b>, requiriendo procesos de sellado previos. También está la opción de los recubrimientos plásticos, siendo el más común el melamínico sobre <b>aglomerado</b>.\nHas llegado al final del test. Repítelo para un objeto diferente!",
     recommendationA: "MDF, contrachapado o aglomerado",
+    endA: "assets/end/pintada_visual.jpg",
     messageB: "<b>Puedes usar cualquier derivado</b>. Existen múltiples opciones para simular que un tablero de derivado es madera maciza. El más simple es usar un contrachapado y cubrir sus cantos (o lados que corresponden al grosor). Es común el uso de fórmicas, melaminas u otros recubrimientos laminados que imitan el color e incluso la textura de la madera real. Existe también la opción de enchapar: pegar chapas de madera maciza al material base.",
-    recommendationB: "puedes usar cualquier derivado",
+    recommendationB: `<a href="https://maderaparadisenadores.wordpress.com/tag/acabados-superficiales/" target="_blank">puedes usar cualquier derivado (clic aquí)</a>`,
+    endB: "assets/end/simula_visual.jpg"
   },
   humedad: {
-    image: "assets/humedad.png",
+    image: "assets/humedad.jpg",
     text: "¿Dónde va a vivir este objeto?",
     optionA: "Exterior o zona húmeda",
     optionB: "Interior en área con uso de agua",
@@ -68,8 +73,10 @@ let escenas = {
     sceneB: "end",
     messageA: "Si el objeto vivirá afuera, a la intemperie, o en un área interior pero muy húmeda, como algunas estructuras arquitectónicas, parques infantiles, decks (pisos) para saunas, piscinas o similares, se deben fabricar con especies de <b>madera maciza</b> que por su composición son resistentes a la humedad y a otros agentes naturales. Has llegado al final.\nPiensa en otra clase de objeto y repite el test!",
     recommendationA: "madera maciza",
+    endA: "assets/end/maciza_humedad.jpg",
     messageB: "El mobiliario de áreas como cocinas y baños se realiza de manera muy extendida en <b>láminas de aglomerado</b> recubiertas por todas sus caras con un revestimiento plástico desde la fábrica.\nPiensa en otra clase de objeto y repite el test!",
-    recommendationB: "láminas de aglomerado"
+    recommendationB: "láminas de aglomerado",
+    endB: "assets/end/aglomerado_humedad.jpg"
   },
   vacio: {
     image: "assets/test.jpeg",
@@ -82,7 +89,8 @@ let escenas = {
     messageB: ""
   },
   end: {
-    text: "FIN"
+    image: "",
+    text: ""
   },
   credits: {
     text: "Por:",
